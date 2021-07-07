@@ -11,10 +11,13 @@
   --dark-grayish-blue: hsl(240, 6%, 50%);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: all 0.5s ease-out;
 }
 
 /* mobile first: hiding the images for desktop view */
@@ -31,6 +34,7 @@ body {
 
 ul {
   list-style-type: none;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -55,7 +59,7 @@ main {
   border-radius: 20px;
   max-width: 20.5rem;
   margin: 0 auto;
-  padding: 0 1.55rem 2rem;
+  padding: 0 1.55rem 0;
   position: relative;
   top: 9.3rem;
 }
@@ -78,7 +82,6 @@ img {
 .container {
   display: block;
   position: relative;
-  margin-bottom: 1rem;
   cursor: pointer;
   user-select: none;
   opacity: 0.7;
@@ -93,11 +96,7 @@ img {
 
 /* Hide the answer paragraph */
 .answer {
-  height: 0;
-  opacity: 0;
-  padding-right: 1rem;
-  line-height: 1.5;
-  transition: all 0.5s ease-out;
+  display: none;
 }
 
 /* Create a custom radio button */
@@ -114,8 +113,10 @@ img {
 
 /* When the radio button is checked, show the answer (p) */
 .container input:checked ~ p.answer {
-  height: auto;
-  opacity: initial;
+  display: block;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+  line-height: 1.5;
 }
 
 /* When the radio button is checked, change the color of the question */
@@ -149,13 +150,20 @@ li::after {
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
-  margin-top: 5px;
-  border: 3px solid greenyellow;
+  margin: 1rem 0 0;
+  padding: 0.6rem 0;
 }
+
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--dark-grayish-blue);
+}
+
+a:hover {
+  color: var(--very-dark-desaturated-blue);
 }
 
 @media (min-width: 1000px) {
