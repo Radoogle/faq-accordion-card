@@ -36,6 +36,8 @@ h1 {
   text-align: center;
   color: var(--very-dark-desaturated-blue);
   font-size: 2rem;
+  margin-top: -5rem;
+  margin-bottom: 2rem;
 }
 
 main {
@@ -72,6 +74,85 @@ img {
   max-width: 100%;
   opacity: 1;
 }
+
+.questio,
+.container {
+  font-size: 0.8rem;
+  color: var(--dark-grayish-blue);
+}
+
+.question:hover,
+.question:active,
+.question:focus,
+.container:hover,
+.container:active,
+.container:focus {
+  color: var(--soft-red);
+  cursor: pointer;
+}
+.answer {
+  color: var(--dark-grayish-blue);
+  opacity: 0.8;
+}
+
+.container {
+  display: block;
+  position: relative;
+  /* padding-left: 35px; */
+  margin-bottom: 1rem;
+  cursor: pointer;
+  /* font-size: 20px; */
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Hide the answer paragraph */
+.answer {
+  display: none;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* On mouse-over, add a grey background color */
+/* .container:hover input {
+  background-color: #ccc;
+} */
+
+/* When the radio button is checked, rotate the arrow (img) */
+.container input:checked ~ img {
+  /* color: var(--very-dark-grayish-blue); */
+  transform: rotate(180deg);
+}
+
+/* When the radio button is checked, show the answer (p) */
+.container input:checked ~ p.answer {
+  display: block;
+}
+
+/* When the radio button is checked, change the color of the question */
+input:checked ~ .question {
+  color: var(--very-dark-grayish-blue);
+  font-weight: 700;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+/* .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+} */
+
 footer {
   border: 3px solid greenyellow;
 }
