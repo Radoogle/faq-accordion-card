@@ -88,39 +88,44 @@ img {
   opacity: 0.7;
 }
 
-/* Hide the browser's default radio button */
-.container input {
+/* Hide the browser's default checkbox button */
+/* .question {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-}
+} */
 
 /* Hide the answer paragraph */
 .answer {
   display: none;
 }
 
-/* Create a custom radio button */
+/* Create a custom checkbox button */
+li {
+  position: relative;
+}
+
 .checkmark {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-/* When the radio button is checked, rotate the arrow (img) */
-.container input:checked ~ img {
+/* When the checkbox is checked, rotate the arrow (img) */
+input:checked ~ .checkmark {
   transform: rotate(180deg);
 }
 
-/* When the radio button is checked, show the answer (p) */
+/* When the checkbox is checked, show the answer (p) */
 .container input:checked ~ .answer {
   display: block;
+  width: 100%;
   margin-bottom: 1rem;
   padding-right: 1rem;
   line-height: 1.5;
 }
 
-/* When the radio button is checked, change the color of the question */
+/* When the checkbox is checked, change the color of the question */
 input:checked ~ .question {
   color: var(--very-dark-desaturated-blue);
   font-weight: 700;
@@ -184,6 +189,7 @@ a:hover {
 
   .wrapper {
     max-width: 66.5%;
+    /* max-width: 80rem; */
   }
 
   h1 {
@@ -193,7 +199,7 @@ a:hover {
 
   .card {
     display: flex;
-    flex-direction: raw;
+    flex-direction: row;
     max-width: 100%;
     margin-left: 2.5rem;
     top: 0;
@@ -229,7 +235,8 @@ a:hover {
   }
 
   .hero {
-    width: 50%;
+    /* max-width: 50%; */
+    max-width: 33rem;
     padding: 3rem 5.5rem 3rem 1rem;
   }
 }
