@@ -112,7 +112,7 @@ img {
 }
 
 /* When the radio button is checked, show the answer (p) */
-.container input:checked ~ p.answer {
+.container input:checked ~ .answer {
   display: block;
   margin-bottom: 1rem;
   padding-right: 1rem;
@@ -225,10 +225,6 @@ a:hover {
     top: 33%;
     left: -5.5%;
     z-index: 1;
-  }
-
-  img {
-    opacity: 1;
   }
 
   .hero {
