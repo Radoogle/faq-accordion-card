@@ -89,11 +89,11 @@ img {
 }
 
 /* Hide the browser's default checkbox button */
-/* .question {
+input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-} */
+}
 
 /* Hide the answer paragraph */
 .answer {
@@ -117,7 +117,7 @@ input:checked ~ .checkmark {
 }
 
 /* When the checkbox is checked, show the answer (p) */
-.container input:checked ~ .answer {
+input:checked ~ .answer {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
@@ -140,9 +140,9 @@ li::after {
   background-color: var(--divider-light-grayish-blue);
 }
 
-.container:hover .question,
-.container:active .question,
-.container:focus .question {
+.question:hover,
+.question:active,
+.question:focus {
   color: var(--soft-red);
   cursor: pointer;
 }
